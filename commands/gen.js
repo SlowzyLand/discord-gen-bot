@@ -10,7 +10,7 @@ const generated = new Set();
 
 module.exports = {
 	name: 'gen', // Command name
-	description: 'Generate a specified service if stocked.', // Command description
+	description: 'Generer un service , si il est stocké.', // Command description
 
     /**
      * Command exetute
@@ -45,7 +45,7 @@ module.exports = {
                     new MessageEmbed()
                     .setColor(config.color.red)
                     .setTitle('Cooldown!')
-                    .setDescription('Please wait before executing that command again!')
+                    .setDescription('Veuillez attendre avant de regénérer!')
                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                     .setTimestamp()
                 );
@@ -59,7 +59,7 @@ module.exports = {
                         new MessageEmbed()
                         .setColor(config.color.red)
                         .setTitle('Missing parameters!')
-                        .setDescription('You need to give a service name!')
+                        .setDescription('Tu dois mettre le nom du service souhaité !')
                         .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                         .setTimestamp()
                     );
@@ -82,7 +82,7 @@ module.exports = {
                             return message.channel.send(
                                 new MessageEmbed()
                                 .setColor(config.color.red)
-                                .setTitle('Generator error!')
+                                .setTitle('Erreur!')
                                 .setDescription(`I do not find the \`${args[0]}\` service in my stock!`)
                                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                                 .setTimestamp()
@@ -93,12 +93,12 @@ module.exports = {
                         message.author.send(
                             new MessageEmbed()
                             .setColor(config.color.green)
-                            .setTitle('Generated account')
+                            .setTitle('Voici ton compte')
                             .addField('Service', `\`\`\`${args[0][0].toUpperCase()}${args[0].slice(1).toLowerCase()}\`\`\``, true)
                             .addField('Account', `\`\`\`${firstLine}\`\`\``, true)
                             .setTimestamp()
                         )
-                        .then(message.author.send('Here is your copy+paste:'))
+                        .then(message.author.send('Ton copier coller:'))
                         .then(message.author.send(`\`${firstLine}\``));
 
                         // Send message to the channel if the user recieved the message
@@ -110,8 +110,8 @@ module.exports = {
                                 message.channel.send(
                                     new MessageEmbed()
                                     .setColor(config.color.green)
-                                    .setTitle('Account generated seccessfully!')
-                                    .setDescription(`Check your private ${message.author}! *If you do not recieved the message, please unlock your private!*`)
+                                    .setTitle('compte générer avec succés!')
+                                    .setDescription(`Regarde tes mp ${message.author}! *si tu n'as pas recu , unblock tes mp !*`)
                                     .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                                     .setTimestamp()
                                 );
