@@ -26,7 +26,7 @@ module.exports = {
                 new MessageEmbed()
                 .setColor(config.color.red)
                 .setTitle('Missing parameters!')
-                .setDescription('You need to give a service name!')
+                .setDescription('Vous devez donner un nom !')
                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                 .setTimestamp()
             );
@@ -42,8 +42,8 @@ module.exports = {
             message.channel.send(
                 new MessageEmbed()
                 .setColor(config.color.green)
-                .setTitle('Service created!')
-                .setDescription(`New ${args[0]} service created!`)
+                .setTitle('Service créer!')
+                .setDescription(`Nouveau ${args[0]} service créer!`)
                 .setFooter(message.author.tag, message.author.displayAvatarURL())
                 .setTimestamp()
             );
