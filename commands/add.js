@@ -10,7 +10,7 @@ const log = new CatLoggr();
 
 module.exports = {
 	name: 'add', // Command name (can be different from the file name)
-	description: 'Add an account to a service.', // Command description displays in the help command
+	description: 'Ajouter un compte a un service.', // Command description displays in the help command
 
     /**
      * Command exetute
@@ -28,8 +28,8 @@ module.exports = {
                 new MessageEmbed()
                 .setColor(config.color.red)
                 .setTitle('Missing parameters!')
-                .setDescription('You need to specify a service!')
-                .addField('For example', `${config.prefix}${this.name} **tree** apple`)
+                .setDescription('Donne le nom du service!')
+                .addField('Par exemple', `${config.prefix}${this.name} **arbre** pomme`)
                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                 .setTimestamp()
             );
@@ -42,8 +42,8 @@ module.exports = {
                 new MessageEmbed()
                 .setColor(config.color.red)
                 .setTitle('Missing parameters!')
-                .setDescription('You need to specify an account!')
-                .addField('For example', `${config.prefix}${this.name} tree **apple**`)
+                .setDescription('Tu dois mettre un compte !')
+                .addField('Par exemple', `${config.prefix}${this.name} arbre **pomme**`)
                 .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 64 }))
                 .setTimestamp()
             );            
@@ -58,8 +58,8 @@ module.exports = {
             message.channel.send(
                 new MessageEmbed()
                 .setColor(config.color.green)
-                .setTitle('Account added!')
-                .setDescription(`Successfuly added \`${args[1]}\` account to \`${args[0]}\` service!`)
+                .setTitle('Compte ajoutée avec succés!')
+                .setDescription(`Bien ajoutée \`${args[1]}\` dans \`${args[0]}\` service!`)
                 .setFooter(message.author.tag, message.author.displayAvatarURL())
                 .setTimestamp()
             ).then(message => message.delete({ timeout: 5000 })); // Automatically delete the message after 5 seconds
